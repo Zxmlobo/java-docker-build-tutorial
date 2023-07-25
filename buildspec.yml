@@ -11,7 +11,6 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn package
       - docker build -t aws_cicd_ecr/java .
       - docker tag aws_cicd_ecr/java:latest 539228799627.dkr.ecr.ap-northeast-1.amazonaws.com/aws_cicd_ecr/java:latest
   post_build:
