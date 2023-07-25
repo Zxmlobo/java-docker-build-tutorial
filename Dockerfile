@@ -4,7 +4,7 @@
 # (https://docs.docker.com/build/building/multi-stage/)
 
 # Stage 1 (to create a "build" image, ~360MB)
-FROM 539228799627.dkr.ecr.ap-northeast-1.amazonaws.com/aws_cicd_ecr/java:base
+FROM eclipse-temurin:17-jdk-alpine AS builder
 # smoke test to verify if java is available
 RUN java -version
 
