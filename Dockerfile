@@ -17,7 +17,7 @@ RUN set -Eeux \
 RUN mvn package
 
 # Stage 2 (to create a downsized "container executable", ~180MB)
-FROM 539228799627.dkr.ecr.ap-northeast-1.amazonaws.com/aws_cicd_ecr/java:eclipse-temurin
+FROM eclipse-temurin:17-jre-alpine
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /usr/src/myapp/target/app.jar .
