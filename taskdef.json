@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam:: <account-id>:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "eureka",
+            "image": "<account-id>.dkr.ecr. <region-code>.amazonaws.com/eureka:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "networkMode": "bridge",
+    "cpu": "256",
+    "memory": "512",
+    "family": "eureka"
+}
