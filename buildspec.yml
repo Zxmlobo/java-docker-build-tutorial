@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker push 539228799627.dkr.ecr.ap-northeast-1.amazonaws.com/aws_cicd_ecr/java:latest
+      - docker push 539228799627.dkr.ecr.ap-northeast-1.amazonaws.com/aws_cicd_ecr/java:$CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo Writing image definitions file...
       - printf '{"ImageURI":"539228799627.dkr.ecr.ap-northeast-1.amazonaws.com/aws_cicd_ecr/java:$CODEBUILD_RESOLVED_SOURCE_VERSION"}' > imageDetail.json
       - cat imageDetail.json
